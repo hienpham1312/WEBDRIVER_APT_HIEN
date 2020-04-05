@@ -7,6 +7,9 @@ public class Buoi2_BrowserCommands {
         System.setProperty("webdriver.chrome.driver", projectPath + "/drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
+        //maximize
+        driver.manage().window().maximize();
+
         //get browser
         driver.get("https://google.com");
 
@@ -23,7 +26,7 @@ public class Buoi2_BrowserCommands {
         //System.out.println(pagesource);
 
         //to url
-        driver.navigate().to("https://facebook.com");
+        driver.navigate().to("https://selenium.dev");
         driver.navigate().to("https://abcnews.go.com");
 
         //back to previous url
@@ -34,9 +37,6 @@ public class Buoi2_BrowserCommands {
 
         //Forward
         driver.navigate().forward();
-
-        //maximize
-        driver.manage().window().maximize();
 
         //Close browser
         //driver.close();
