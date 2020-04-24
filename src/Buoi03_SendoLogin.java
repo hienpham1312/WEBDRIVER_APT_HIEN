@@ -3,6 +3,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.List;
+
 public class Buoi03_SendoLogin {
     public static void main(String[] args) throws InterruptedException {
         String projectPath = System.getProperty("user.dir");
@@ -17,12 +19,22 @@ public class Buoi03_SendoLogin {
         Thread.sleep(12000);
 
         // Tắt popup "Ở nhà là nhất - 10K
-        WebElement btnClose1 = driver.findElement(By.xpath("//div[@class='modal-content']/button[starts-with(@class,'close')]"));
-        btnClose1.click();
+        /*WebElement btnClose1 = driver.findElement(By.xpath("//div[@class='modal-content']/button[starts-with(@class,'close')]"));
+        btnClose1.click();*/
+        List<WebElement> btnClose1 = driver.findElements(By.xpath("//div[@class='modal-content']/button[starts-with(@class,'close')]"));
+        if(btnClose1.size()>0)
+        {
+            btnClose1.get(0).click();
+        }
 
         // Tắt popup "Bật thông báo để không bỏ lỡ..."
-        WebElement btnClose2 = driver.findElement(By.xpath("//button[starts-with(@class,'closeBtn')]"));
-        btnClose2.click();
+        /*WebElement btnClose2 = driver.findElement(By.xpath("//button[starts-with(@class,'closeBtn')]"));
+        btnClose2.click();*/
+        List<WebElement> btnClose2 = driver.findElements(By.xpath("//button[starts-with(@class,'closeBtn')]"));
+        if(btnClose2.size()>0)
+        {
+            btnClose2.get(0).click();
+        }
 
         // Click Đăng nhập
         WebElement btnLogin = driver.findElement(By.xpath("//button[@id='login']"));
