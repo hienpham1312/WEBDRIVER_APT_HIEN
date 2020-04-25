@@ -47,11 +47,7 @@ public class Buoi05_UpdateInfo {
         System.out.println(state);
         driver.findElement(By.xpath("//label[text()='Nam']")).click();
 
-        //Sua ngay thang
-        
-
-
-
-
+        // Đóng trình duyệt
+        driver.close();
     }
 }
